@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical AI Assistant</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+            background-image: url('static/images/backgorund1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+            background: transparent;
+        }
+
+        .navbar-toggler i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .navbar-nav .nav-item {
+            padding: 0 10px;
+        }
+
+        .navbar-nav .nav-item a {
+            color: white !important;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-item a:hover {
+            color: #f8f9fa !important;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            text-align: center;
+            padding: 100px 20px 30px;
+        }
+
+        .welcome-section h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #007bff;
+            background: white;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        /* Card Section */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .card {
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            border: 2px solid #007bff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007bff;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .welcome-section h1 {
+                font-size: 2em;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">Medical AI Assistant</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/disease">Disease Predictor</a></li>
+                <li class="nav-item"><a class="nav-link" href="/diagnosis">Diagnosis Assistant</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#">Medicine Info</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#">Image Analysis</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#">Medical Chatbot</a></li>
+                <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Sign Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome to the Medical AI Assistant!</h1>
+    </div>
+
+    <!-- Card Section -->
+    <div class="container">
+        <div class="card">
+            <i class="fas fa-stethoscope"></i>
+            <h3>Disease Prediction</h3>
+            <p>Get AI-powered predictions based on symptoms.</p>
+            <a href="/disease">Try Now</a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-heartbeat"></i>
+            <h3>Diagnosis Assistant</h3>
+            <p>Receive AI-driven insights on medical conditions.</p>
+            <a href="/diagnosis">Check Symptoms</a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-x-ray"></i>
+            <h3>Image Analysis</h3>
+            <p>Analyze X-rays and medical images with AI.</p>
+            <a href="/#">Upload Image</a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-pills"></i>
+            <h3>Medicine Info</h3>
+            <p>Find uses, side effects, and interactions.</p>
+            <a href="/#">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Medical AI Assistant. All rights reserved.
+    </footer>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
